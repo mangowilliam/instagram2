@@ -1,4 +1,11 @@
+body{
+  background-color: #fff;
+  color: #000;
+  }
 #search{
   width: 300px;
   float: inline-start;
+}
+.navbar-brabd{
+  font-family: 'Grand Hotel', cursive;
 }

@@ -1,0 +1,2 @@
+Hello {{name}}
+Welcome to instagram2. You will never think of the other one again, enjoy.

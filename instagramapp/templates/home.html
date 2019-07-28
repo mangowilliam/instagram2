@@ -1,0 +1,45 @@
+<link rel="icon" href='https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png' type="icon/images">
+{%extends "registration/base.html"%} {% load bootstrap3 %}
+{% block content %}
+{{ block.super }}
+<div class="container">
+    {% for posts_item in posts%}
+    <div class=row>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="https://www.digitalmarketingceo.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-11.05.04-PM-e1536030535339.png" width="550px" alt="Image" />
+        </div>
+        <br><br><br><br><br>
+        {% if form.errors %}
+        <p> Some Information Might be Incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="text-center">Sign Up</h3>
+        </div>
+        <div class="panel-body">
+
+          <form  action="/accounts/register/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-4"></div>
+  </div>
+</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
