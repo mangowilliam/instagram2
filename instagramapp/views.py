@@ -25,5 +25,6 @@ def register(request):
         form =UserRegistrationForm()
     return render(request,'registration/registration_form.html',{'form':form}) 
 
+@login_required(login_url='/accounts/login/')
 def profile(request):
-    return redirect(request,'home.html')
+    return render(request,'home.html')

@@ -22,11 +22,11 @@
             <span class=icon-bar></span>
           </button>
 
-          <span class="navbar-brand" href="#"><i class="fa fa-instagram"></i>&nbsp;|<img
+          <span class="navbar-brand" href="{%url 'index'%}"><i class="fa fa-instagram"></i>&nbsp;|<img
             src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
             width='70px'></span> </strong>
-
       </div>
+      
       <div class='navbar-collapse collapse '>
         <div class="col-sm-4 col-md-4 " id="search">
           <form class="navbar-form" role="search" action="">
@@ -53,6 +53,9 @@
                     <a href="/accounts/password/change">Change Password</a>
                   </li>
                   <li>
+                    <a href="{%url 'index'%}">Home</a>
+                  </li>
+                  <li>
                     <a href="/logout">Logout</a>
                   </li>
                 </ul>
@@ -68,10 +71,12 @@
 
         <ul class="navbar-right">
           <li style="list-style: none;">
-            <a class="nav-link" href="#"><i class="fa fa-fw fa-user"></i></<a>
+            <a class="nav-link" href="{%url 'profile'%}"><i class="fa fa-fw fa-user" width='90px'></i></<a>
               &nbsp;&nbsp;
               <a class="nav-link" href="#"><i class="fa fa-heart"></i></<a>
+             <a href="{%url 'index'%}">Home</a>
           </li>
+          
         </ul>
 
       </div>

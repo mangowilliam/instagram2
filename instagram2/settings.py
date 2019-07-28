@@ -151,6 +151,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL ='/accounts/login'
 CRISPY_TEMPLATE_PACK='bootstrap3'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
