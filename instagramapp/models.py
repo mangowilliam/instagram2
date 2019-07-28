@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Profile(models.Model):
     photo = models.ImageField(upload_to='images/',)
     bio = models.CharField(max_length=150)
+    name = models.CharField(max_length=60)
     
     
     def __str__(self):
@@ -15,9 +16,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=60)
     caption = models.CharField(max_length=150)
-    profile = models.ForeignKey(Profile) 
-    writer = models.ForeignKey(User, on_delete = models.CASCADE)
-    ondate = models.DateTimeField(default= timezone.now)
+    profile = models.ForeignKey(User,on_delete=models.CASCADE) 
     likes = models.IntegerField()
     comments = models.CharField(max_length=200)
     
