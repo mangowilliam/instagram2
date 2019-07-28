@@ -22,10 +22,12 @@
             <span class=icon-bar></span>
           </button>
 
-          <span class="navbar-brand" href=""><i class="fa fa-instagram"></i>&nbsp;|&nbsp;Instagram</span> </strong>
+          <span class="navbar-brand" href="#"><i class="fa fa-instagram"></i>&nbsp;|<img
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
+            width='70px'></span> </strong>
 
       </div>
-      <div class='navbar-collapse collapse'>
+      <div class='navbar-collapse collapse '>
         <div class="col-sm-4 col-md-4 " id="search">
           <form class="navbar-form" role="search" action="">
 
@@ -37,46 +39,32 @@
             </div>
 
           </form>
-          {%extends "registration/base.html"%}
-          {% load bootstrap3 %}
-          {% block content %}
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                {% if form.errors %}
-                <p> Password or Username is incorrect </p>
-                {% endif %}
-                <div class="panel panel-default">
-
-                  <div class="panel-heading">
-                    <h3 class="text-center">Sign In</h3>
-                  </div>
-                  <div class="panel-body">
-
-                    <form action="/accounts/login/" method="post">
-                      {% csrf_token %}
-                      {% bootstrap_form form%}
-
-                      <div class="form-group">
-                        <input type="submit" class="btn btn-primary btn-sm" value="Login">
-                      </div>
-
-                      <input type="hidden" name="next" value="{{next}}">
-
-                    </form>
-
-                  </div>
-
-                </div>
-
-              </div>
-              <!-- empty div -->
-              <div class="col-md-4"></div>
-            </div>
-          </div>
-
-          {% endblock %}
+         
         </div>
+        <div class="col-sm-6 col-md-6">
+            {% if user.is_authenticated %}
+            <ul style="list-style: none;">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                          <span class="caret"></span>
+                      </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            {% else %}
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
+
+            {% endif %}
+          </div>
 
         <ul class="navbar-right">
           <li style="list-style: none;">

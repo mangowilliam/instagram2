@@ -4,9 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url('^$',views.instagram,),
-    url('register/',views.register,name='register'),
-    
+    url('^$',views.register,name='register'),
+    url(r'instagram',views.instagram,name= 'index'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
