@@ -1,0 +1,29 @@
+<link rel="icon" href='https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png'
+  type="icon/images">
+  {%extends 'base.html'%} {% load bootstrap3 %}
+{%load crispy_forms_tags%}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+      {% if images%}
+        <h2>Found {{ userss|length }} of searched user {{message}}</h2>
+      {% else %}
+        <h2> Found 0 users for the searched user, {{message}}</h2>
+      {% endif %}
+  
+    </div>
+  
+    <div class="row">
+  
+    {% if users %}
+      {% for user in users %}
+        <div class="col-sm-6 col-md-3">
+            <h1>{{user.username}}</h1>
+        </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+  
+{% endblock %}

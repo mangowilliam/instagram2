@@ -25,6 +25,11 @@ class Profile(models.Model):
     def update_profile(id):
        Profile.objects.filter(id = id).update()
     
+    @classmethod
+    def search_profile(cls, items):
+        posts = cls.objects.filter(user__username__icontains=items)
+        return posts
+    
 class Image(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='images/')
     name = models.CharField(max_length=60)
@@ -52,7 +57,4 @@ class Image(models.Model):
         posts = cls.objects.all()
         return posts
     
-    @classmethod
-    def search_posts(cls, items):
-        posts = cls.objects.filter(category__name__icontains=items)
-        return posts
+   

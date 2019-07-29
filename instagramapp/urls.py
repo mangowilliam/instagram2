@@ -7,6 +7,7 @@ urlpatterns = [
     url('^$',views.register,name='register'),
     url(r'instagram',views.instagram,name= 'index'),
     url(r'profile',views.profile,name= 'profile'),
+    url(r'^search/', views.search_profile, name='search_profile')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
