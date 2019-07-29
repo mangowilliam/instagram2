@@ -52,7 +52,7 @@ def search_profile(request):
         print(searched_profiles)
         message = f"{items}"
 
-        return render(request, 'search.html', {"message": message, "images": searched_profiles})
+        return render(request, 'search.html', {"message": message, "users": searched_profiles})
 
     else:
         message = "You haven't searched for any user"
@@ -71,4 +71,4 @@ def new_post(request):
 
     else:
         form = NewPostForm()
-    return render(request, 'new_article.html', {"form": form})
+    return render(request, 'newpost.html', {"form": form})

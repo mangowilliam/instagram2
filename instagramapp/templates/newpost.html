@@ -1,3 +1,5 @@
+<link rel="icon" href='https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png'
+  type="icon/images">
 {% load bootstrap3 %} {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,7 @@
 
 <body>
 
-  <form  action="{%url 'new-article'%}" method="post" enctype="multipart/form-data">
+  <form  action="{%url 'new-post'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}

@@ -29,6 +29,10 @@ class Profile(models.Model):
     def search_profile(cls, items):
         posts = cls.objects.filter(user__username__icontains=items)
         return posts
+    @classmethod
+    def get_profile(cls):
+        profile = Profile.get_by_id(profile.id)
+        return profile
     
 class Image(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='images/')
