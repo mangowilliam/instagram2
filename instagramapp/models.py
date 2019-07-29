@@ -50,3 +50,8 @@ class Image(models.Model):
     def get_images(cls):
         posts = cls.objects.all()
         return posts
+    
+    @classmethod
+    def search_posts(cls, items):
+        posts = cls.objects.filter(category__name__icontains=items)
+        return posts
