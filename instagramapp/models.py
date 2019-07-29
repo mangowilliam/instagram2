@@ -1,24 +1,25 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
-from django.db import models
 
 # Create your models here.
 class Profile(models.Model):
+    class Meta:
+        db_table = 'profile'
     photo = models.ImageField(default = 'default.jpg',upload_to='images/')
     bio = models.CharField(max_length=150)
-    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)   
+    user = models.OneToOneField(User, on_delete=models.CASCADE,blank=True, related_name='profile')   
     
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return self.user.username
   
         
     def save_profile(self):
         self.save()
 
     @classmethod
-    def delete_profile(id):
-       Profile.objects.filter(id=id).delete()
+    def delete_profile(self):
+       self.delete()
 
     @classmethod
     def update_profile(id):
@@ -28,7 +29,7 @@ class Image(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='images/')
     name = models.CharField(max_length=60)
     caption = models.CharField(max_length=150)
-    profile = models.ForeignKey(Profile) 
+    profile = models.ForeignKey(User, on_delete=models.CASCADE) 
     likes = models.IntegerField(blank=True, null=True)
     comments = models.CharField(max_length=200)
     
@@ -39,7 +40,7 @@ class Image(models.Model):
         self.save()
 
     @classmethod
-    def delete_image(id):
+    def delete_image(self):
         self.delete()
 
     @classmethod

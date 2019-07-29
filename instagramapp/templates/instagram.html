@@ -8,6 +8,8 @@
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <p>{{ posts_item.name }}</p>
             <img src="{{ posts_item.image.url }}" width="550px" alt="Image" />
+            <p>{{ posts_item.caption }}</p>
+            <p><i class="fa fa-heart"></i>{{ posts_item.likes }}</p>
         </div>
         <br><br><br><br><br>
         <p>{{ posts_item.profile }}</p>
