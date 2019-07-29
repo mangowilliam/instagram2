@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'instagram',views.instagram,name= 'index'),
     url(r'home/profile',views.myimage,name='profile-home'),
     url(r'profile',views.profile,name= 'profile'),
-    url(r'^search/', views.search_profile, name='search_profile'),
+    url(r'^search/', views.search_profile, name='search-users'),
     url(r'^new/post$', views.new_post, name='new-post'),
 ]
 if settings.DEBUG:

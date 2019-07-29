@@ -20,12 +20,12 @@ Users would like to:
 
 ## BDD
 
-|Behaviour	            |          Input	|Output                       |
-|-----------------------|-------------------|-----------------------------|
-|Display all images     |signup & login     |openans  images & profiles   |
-|To search profile      |user name          |Users can search by profiles |
-|update profile      	|udate profile data |updated profile              |
-
+|Behaviour	            |          Input	        |Output                       |
+|-----------------------|-------------------------|-----------------------------|
+|Display all images     |signup & login           | images                      |
+|To search profile      |user name,mangoes        |Users can search by profiles |
+|update profile      	  |click update profile btn |updated profile              |
+|view your profile      |click on fa-user nav icon|view profile                 |
 
 ## SetUp / Installation Requirements
 * Prerequisites

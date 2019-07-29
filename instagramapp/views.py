@@ -54,8 +54,8 @@ def profile(request):
 
 def search_profile(request):
 
-    if 'users' in request.GET and request.GET["users"]:
-        items = request.GET.get("users")
+    if 'user' in request.GET and request.GET["user"]:
+        items = request.GET.get("user")
         searched_profiles = Profile.search_profile(items)
         print(searched_profiles)
         message = f"{items}"
