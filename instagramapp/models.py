@@ -11,6 +11,18 @@ class Profile(models.Model):
     
     def __str__(self):
         return f'{self.user.username} Profile'
+  
+        
+    def save_profile(self):
+        self.save()
+
+    @classmethod
+    def delete_profile(id):
+       Profile.objects.filter(id=id).delete()
+
+    @classmethod
+    def update_profile(id):
+       Profile.objects.filter(id = id).update()
     
 class Image(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='images/')
@@ -23,6 +35,17 @@ class Image(models.Model):
     
     def __str__(self):
         return self.name
+    def save_image(self):
+        self.save()
+
+    @classmethod
+    def delete_image(id):
+        self.delete()
+
+    @classmethod
+    def update_caption(cls,caption):
+       cls.objects.filter(caption).update()
+    
     @classmethod
     def get_images(cls):
         posts = cls.objects.all()
