@@ -20,11 +20,11 @@ Users would like to:
 
 ## BDD
 
-|Behaviour	            |          Input	  |Output                       |
+|Behaviour	            |          Input	|Output                     |
 |-----------------------|-------------------|-----------------------------|
 |Display all images     |signup & login     |openans  images & profiles   |
-|To search Enter        |category           |Users can search by category |
-|update profile      	|udate profile data |updated profile|
+|To search users        |user name          |Users can search by username |
+|update profile      	|udate profile data |updated profile              |
 
 
 ## SetUp / Installation Requirements
