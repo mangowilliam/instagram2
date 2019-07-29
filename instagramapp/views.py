@@ -13,6 +13,14 @@ def instagram(request):
     posts = Image.get_images()
     return render(request, "instagram.html", {"posts":posts})
 
+@login_required(login_url='/accounts/login/')
+def myimage(request):
+    current_user = request.user
+    id = current_user.id
+    image = Image.filter_by_user_id(id)
+    print(image)
+    return render(request, "home.html", {"image":image})
+
 def register(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
@@ -42,7 +50,7 @@ def profile(request):
         'u_form':u_form,
         'p_form':p_form,
     }
-    return render(request,'home.html',twoforms)
+    return render(request,'update.html',twoforms)
 
 def search_profile(request):
 

@@ -29,10 +29,6 @@ class Profile(models.Model):
     def search_profile(cls, items):
         posts = cls.objects.filter(user__username__icontains=items)
         return posts
-    @classmethod
-    def get_profile(cls):
-        profile = Profile.get_by_id(profile.id)
-        return profile
     
 class Image(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='images/')
@@ -45,6 +41,8 @@ class Image(models.Model):
     
     def __str__(self):
         return self.name
+    class Meta:
+        ordering = ['name']
     def save_image(self):
         self.save()
 
@@ -52,6 +50,11 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
+    @classmethod
+    def filter_by_user_id(cls,user_id):
+        images = Image.objects.filter(profile=user_id)
+        return images
+    
     @classmethod
     def update_caption(cls,caption):
        cls.objects.filter(caption).update()

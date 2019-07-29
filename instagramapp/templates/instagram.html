@@ -1,19 +1,30 @@
-<link rel="icon" href='https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png' type="icon/images"class= 'fav'>
+<link rel="icon" href='https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png'
+    type="icon/images" class='fav'>
 {%extends 'base.html'%}
 {% block content %}
 {{ block.super }}
 <div class="container">
     {% for posts_item in posts%}
     <div class=row>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <p>{{ posts_item.name }}</p>
-            <img src="{{ posts_item.image.url }}" width="550px" alt="Image" />
-            <p>{{ posts_item.caption }}</p>
-            <p><i class="fa fa-heart"></i>{{ posts_item.likes }}</p>
+        <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            <div class="card bg-info text-white">
+                <div class="card-header"><img class="img-circle" alt="Cinque Terre" src='{{user.profile.photo.url}}'
+                        width='150px'>
+                    <p>{{ posts_item.profile }}</p>
+                </div>
+                <div class="card-body">
+                    <img src="{{ posts_item.image.url }}" width="550px" height='400' alt="Image" />
+                    <p>{{ posts_item.caption }}</p>
+                    <p><i class="fa fa-heart"></i>{{ posts_item.likes }}</p>
+                </div>
+                <div class="card-footer">
+                    <p>{{ posts_item.comments }}</p>
+                </div>
+            </div>
         </div>
-        <br><br><br><br><br>
-        <p>{{ posts_item.profile }}</p>
-    </div>
-    {% endfor %}
+
+</div>
+
+{% endfor %}
 </div>
 {% endblock %}

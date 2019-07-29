@@ -4,8 +4,8 @@ from.models import Image,Profile
 # Create your tests here.
 class ProfileTestClass(TestCase):
          
-     def setUp(self):
-        self.mango = Profile(username='mango')
+    def setUp(self):
+        self.mango = Profile(user='mango')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.mango, Profile))
@@ -13,7 +13,7 @@ class ProfileTestClass(TestCase):
     def tearDown(self):
         Profile.objects.all().delete()
         
-     def test_save(self):
+    def test_save(self):
         self.food.save_profile()
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles) > 0)
@@ -31,7 +31,7 @@ class ProfileTestClass(TestCase):
 
 class ImageTestClass(TestCase):
          
-     def setUp(self):
+    def setUp(self):
         self.machakura = Image(name='machakura')
 
     def test_instance(self):
@@ -40,7 +40,7 @@ class ImageTestClass(TestCase):
     def tearDown(self):
         Image.objects.all().delete()
         
-     def test_save(self):
+    def test_save(self):
         self.machakura.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
