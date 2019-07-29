@@ -22,25 +22,6 @@ body{
   padding: 10px;
 
 }
-body{
-  background-color: #ffdd71;
-  color:#ffdd71;
-}
-.pt-3{
-  margin-top: 10px;
-}
-h1{
-  color: black;
-}
-#futa {
-  clear: both;
-  position: relative;
-  height: 100px;
-  margin-top: -200px;
-}
-h2{
-  color: black;
-}
 @media (min-width: 768px) {
   .container {
     width: 750px;
